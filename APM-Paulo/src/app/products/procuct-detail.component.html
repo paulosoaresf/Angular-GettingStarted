@@ -1,0 +1,52 @@
+<div class="card" *ngIf='product'>
+	<div class="card-header">
+		{{pageTitle + ': ' + product.productName}}
+	</div>
+	<div class="card-body">
+		<table class="table table-borderless">
+			<tbody>
+				<tr>
+					<th scope="row">Name:</th>
+					<td>{{product.productName}}</td>
+					<td rowspan="7"><img width="{{imageWidth}}" title="{{product.productName}}" alt="{{product.description}}"
+							src={{product.imageUrl}} [style.margin.px]='imageMargin'></td>
+				</tr>
+				<tr>
+					<th scope="row">Code:</th>
+					<td>{{product.productCode}}</td>
+				</tr>
+				<tr>
+					<th scope="row">Description:</th>
+					<td>{{product.description}}</td>
+				</tr>
+				<tr>
+				<tr>
+					<th scope="row">Availability:</th>
+					<td>{{product.releaseDate}}</td>
+				</tr>
+				<tr>
+					<th scope="row">Price:</th>
+					<td>{{product.price | currency:'USD':'symbol':'1.2-2'}}</td>
+				</tr>
+				<tr>
+					<th scope="row">5 Star Rating:</th>
+					<td>
+						<pm-star [rating]='product.starRating'></pm-star>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="card-footer text-muted">
+		<div class='row'>
+			<div class='col-md-10'>
+				<button type="button" class="btn btn-outline-secondary" (click)='onBack()'><i class="fa fa-chevron-left"
+						aria-hidden="true"></i> Back</button>
+			</div>
+			<div class='col-md-2'>
+				<button type="button" class="btn btn-outline-secondary"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+					Next Product</button>
+			</div>
+		</div>
+	</div>
+</div>
