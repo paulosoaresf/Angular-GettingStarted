@@ -13,7 +13,7 @@
 				</tr>
 				<tr>
 					<th scope="row">Code:</th>
-					<td>{{product.productCode}}</td>
+					<td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
 				</tr>
 				<tr>
 					<th scope="row">Description:</th>
